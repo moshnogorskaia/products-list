@@ -17,7 +17,7 @@ export async function getStaticProps() {
   const jsonData = await fs.readFile(filePath);
   const data = JSON.parse(jsonData);
 
-  return { props: data };
+  return { props: data, revalidate: 10 };
 }
 
 export default HomePage;
